@@ -21,6 +21,8 @@ services:
       - DOCKER_INFLUXDB_INIT_ORG=QADB
       - DOCKER_INFLUXDB_INIT_BUCKET=k6metric
       - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=XTjiXgy_mxfuhhd0adSq5qSPz03vX-pNaZgzqiqq5AqrDPjc_b1suV73MxxGL0EvLBmGBW6kzcb8x27WxTAh8Q==
+    volumes:
+      - influxdb-data:/var/lib/influxdb2
 
   grafana:
     image: grafana/grafana:8.2.6
@@ -34,8 +36,9 @@ services:
       - GF_AUTH_ANONYMOUS_ENABLED=true
       - GF_AUTH_BASIC_ENABLED=false
     volumes:
+      - grafana-data:/var/lib/grafana
       - ./grafana:/etc/grafana/provisioning/
 
-  volumes:
+volumes:
   influxdb-data:
   grafana-data:
