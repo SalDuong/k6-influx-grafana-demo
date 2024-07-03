@@ -38,6 +38,7 @@ services:
     volumes:
       - grafana-data:/var/lib/grafana
       - ./grafana:/etc/grafana/provisioning/
+      - ./grafana/dashboards:/etc/grafana/provisioning/dashboards
 
 volumes:
   influxdb-data:

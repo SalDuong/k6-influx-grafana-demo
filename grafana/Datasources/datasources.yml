@@ -1,0 +1,13 @@
+apiVersion: 1
+
+datasources:
+  - name: MyInfluxDB
+    type: influxdb
+    url: http://influxdb:8086
+    isDefault: true
+    secureJsonData:
+      token: XTjiXgy_mxfuhhd0adSq5qSPz03vX-pNaZgzqiqq5AqrDPjc_b1suV73MxxGL0EvLBmGBW6kzcb8x27WxTAh8Q==
+    jsonData:
+      version: Flux
+      organization: QADB
+      defaultBucket: k6metric
